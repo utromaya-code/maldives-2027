@@ -34,7 +34,7 @@ maldives-2027/
 - **Океан** (с исходного сайта): `whale-shark`, `whale-shark-2`, `manta`, `manta-swim`, `reef`, `island-aerial`, `sunset-sea`, `kayak` и др.
 - **Google Диск, папка «Мальдивы»**: `sandbar-walk`, `sandbar-pareo`, `palm-shadow`, `dusk-boat`, `group`, `jetty`, `lagoon-palms`, `stingray`, `lagoon-fish`, `water-villas`, `pink-sunset`, `red-sunset`, `tree-yoga`.
   Не использованы `File_009`, `File_010`, `File_011` — на них водяные знаки чужих сайтов (Fishki.net, YOURSITE.RU) и подпись фотографа.
-- **Татьяна**: `tatiana.jpg` — с её сайта (репозиторий `tatiana-yoga`).
+- **Татьяна**: `tatiana.jpg` — портрет из папки «Мальдивы» на Google Диске; там же `yoga-camel` (практика на косе, блок «Практика») и `yoga-headstand` (галерея).
 
 Палитра (CSS-переменные в начале `<style>`): глубокий океан `--ocean #0B2233`, лагуна `--lagoon #2C9FA8`,
 песок `--sand #F5EFE5`, жемчуг `--pearl #FBF8F3`, шампань `--gold #B8955A` / `--gold-light #DCC79C`.
