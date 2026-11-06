@@ -163,7 +163,9 @@ h2 em{color:var(--lagoon)}
 .part::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(11,34,51,.94) 0%,rgba(11,34,51,.6) 42%,rgba(11,34,51,0) 72%);z-index:-1}
 .part:hover img{transform:scale(1.05)}
 .part-body{padding:40px}
-.part-num{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold-light)}
+.part-num{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.parts{position:relative}
+.parts::after{content:"→";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;background:var(--pearl);color:var(--gold);font:300 26px/58px var(--sans);text-align:center;border:1px solid var(--gold-light);box-shadow:0 16px 36px -14px rgba(11,34,51,.5);z-index:2}
 .part h3{font-size:clamp(36px,3.6vw,52px);margin:6px 0 12px}
 .part .dates{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(255,255,255,.35);border-radius:999px;margin-bottom:16px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:rgba(255,255,255,.06)}
 .part p{color:rgba(255,255,255,.84);margin:0;max-width:440px}
@@ -283,20 +285,6 @@ h2 em{color:var(--lagoon)}
 .lb-close{top:20px;right:20px}.lb-prev{left:20px;top:50%;transform:translateY(-50%)}.lb-next{right:20px;top:50%;transform:translateY(-50%)}
 
 /* ---------- Стоимость ---------- */
-.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.price{position:relative;border-radius:26px;padding:38px 34px 34px;background:linear-gradient(165deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid var(--line-light);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
-.price.feature{background:linear-gradient(165deg,rgba(220,199,156,.22),rgba(220,199,156,.04));border-color:rgba(220,199,156,.45)}
-.price .tag{position:absolute;top:-13px;left:34px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,#E7D3A6,#C9A866);color:#1A1408}
-.price small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(234,241,243,.6)}
-.price h3{font-size:34px;margin:10px 0 6px;color:#fff}
-.price .when{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold-light)}
-.price .amount{font-family:var(--serif);font-size:58px;line-height:1;margin:30px 0 8px;color:#fff;letter-spacing:.06em}
-.price .amount sup{font-size:22px;letter-spacing:0;margin-left:6px;color:rgba(255,255,255,.7)}
-.price .per{font-size:14px;color:rgba(234,241,243,.6);margin:0}
-.price ul{list-style:none;margin:26px 0 0;padding:22px 0 0;border-top:1px solid var(--line-light)}
-.price ul li{font-size:15px;color:rgba(234,241,243,.8);padding:5px 0 5px 22px;position:relative}
-.price ul li::before{content:"";position:absolute;left:0;top:15px;width:10px;height:1px;background:var(--gold-light)}
-.price-note{margin:26px 0 0;font-size:14px;color:rgba(234,241,243,.6);text-align:center}
 .incl{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:70px}
 .incl-box{border-radius:26px;padding:38px 38px 30px;border:1px solid var(--line-light)}
 .incl-box h3{font-size:32px;color:#fff;margin-bottom:18px}
@@ -358,6 +346,103 @@ footer a:hover{color:var(--gold-light)}
 footer p{margin:0 0 8px}
 .foot-bottom{padding-top:26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:rgba(234,241,243,.42)}
 
+
+/* ---------- Цена: одна карточка ---------- */
+.price-solo{display:grid;grid-template-columns:1fr 1.1fr;border-radius:30px;overflow:hidden;border:1px solid rgba(220,199,156,.4);background:linear-gradient(160deg,rgba(220,199,156,.16),rgba(220,199,156,.03) 55%,rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 50px 100px -60px rgba(0,0,0,.8);max-width:1000px;margin:0 auto}
+.ps-main{position:relative;padding:54px 48px 46px;border-right:1px solid rgba(220,199,156,.22)}
+.ps-main .tag{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,#E7D3A6,#C9A866);color:#1A1408;margin-bottom:24px}
+.ps-main small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(234,241,243,.6)}
+.ps-main h3{font-size:clamp(40px,4vw,54px);margin:10px 0 8px;color:#fff}
+.ps-main .when{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold-light)}
+.ps-main .amount{font-family:var(--serif);font-size:74px;line-height:1;margin:34px 0 12px;color:#fff;letter-spacing:.06em}
+.ps-main .amount sup{font-size:24px;letter-spacing:0;margin-left:8px;color:rgba(255,255,255,.7)}
+.ps-main .per{font-size:14px;color:rgba(234,241,243,.62);margin:0 0 4px}
+.ps-list{list-style:none;margin:0;padding:40px 48px;display:flex;flex-direction:column;justify-content:center}
+.ps-list li{position:relative;padding:14px 0 14px 34px;border-bottom:1px solid rgba(255,255,255,.07)}
+.ps-list li:last-child{border-bottom:0}
+.ps-list li::before{content:"✓";position:absolute;left:0;top:14px;color:var(--gold-light)}
+.ps-list b{display:block;font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.2;color:#fff}
+.ps-list span{font-size:14px;color:rgba(234,241,243,.62)}
+
+/* ---------- Карта маршрута ---------- */
+.route{overflow:hidden}
+.route-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:clamp(32px,4vw,56px);align-items:start}
+.map-wrap{position:sticky;top:96px}
+.map-wrap{margin:0;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.1);box-shadow:0 60px 120px -60px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.08);background:var(--ocean)}
+.map-svg{display:block;width:100%;height:auto}
+.map-wrap figcaption{padding:14px 22px;font-size:12px;color:rgba(234,241,243,.5);border-top:1px solid rgba(255,255,255,.07)}
+.map-svg .grid line{stroke:rgba(255,255,255,.05);stroke-width:1}
+.map-svg .grid-lbl{font-family:var(--sans);font-size:11px;fill:rgba(234,241,243,.3);letter-spacing:.08em}
+.map-svg .ocean-lbl{font-family:var(--serif);font-style:italic;font-size:40px;fill:rgba(234,241,243,.09)}
+.map-svg .reef-glow{fill:none;stroke:rgba(95,201,204,.16);stroke-width:10}
+.map-svg .atoll{fill:url(#lagoon);stroke:rgba(213,238,236,.5);stroke-width:1.2;stroke-dasharray:3 4}
+.map-svg .islets ellipse{fill:rgba(251,248,243,.72)}
+.map-svg .isl{fill:#FBF8F3}
+.map-svg .atoll-lbl{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.32em;fill:rgba(234,241,243,.45)}
+.map-svg .place{font-family:var(--serif);font-style:italic;font-size:24px;fill:#fff}
+.map-svg .minor{font-size:19px;fill:rgba(255,255,255,.7)}
+.map-svg .creature{font-family:var(--serif);font-style:italic;font-size:19px;fill:#8FDCDC}
+.map-svg .route-lbl{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.26em;text-transform:uppercase;fill:#8FDCDC}
+.map-svg .yacht-lbl{fill:var(--gold-light)}
+.map-svg .route-yacht{fill:none;stroke:var(--gold-light);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 3.2s cubic-bezier(.6,.1,.3,1) .3s}
+.in .map-svg .route-yacht{stroke-dashoffset:0}
+.map-svg .route-yacht-glow{fill:none;stroke:rgba(220,199,156,.35);stroke-width:9;filter:url(#glow);opacity:0;transition:opacity 1.6s ease 2.6s}
+.in .map-svg .route-yacht-glow{opacity:1}
+.map-svg .route-ferry{fill:none;stroke:#8FDCDC;stroke-width:2.2;stroke-dasharray:1 8;stroke-linecap:round}
+.map-svg .route-trip{fill:none;stroke:rgba(255,255,255,.7);stroke-width:1.5;stroke-dasharray:5 5}
+.map-svg .ws-zone{fill:none;stroke:rgba(143,220,220,.3);stroke-width:16;stroke-linecap:round}
+.map-svg .mk{cursor:pointer}
+.map-svg .mk circle{fill:var(--ocean);stroke:var(--gold-light);stroke-width:1.6;transition:fill .3s}
+.map-svg .mk text{font-family:var(--sans);font-weight:600;font-size:14px;fill:var(--gold-light);transition:fill .3s}
+.map-svg .mk-s{transition:transform .3s ease}
+.map-svg .mk.on circle{fill:var(--gold-light)}
+.map-svg .mk.on text{fill:var(--ocean)}
+.map-svg .mk.on .mk-s{transform:scale(1.3)}
+.map-svg .compass circle{fill:none;stroke:rgba(234,241,243,.25)}
+.map-svg .compass .c2{stroke-dasharray:2 4}
+.map-svg .compass path{fill:rgba(234,241,243,.3)}
+.map-svg .compass path.n{fill:var(--gold-light)}
+.map-svg .compass text{font-family:var(--sans);font-weight:600;font-size:13px;fill:var(--gold-light)}
+.map-svg .scale line{stroke:rgba(234,241,243,.6);stroke-width:1.2}
+.map-svg .scale text{font-family:var(--sans);font-size:11px;fill:rgba(234,241,243,.6)}
+.stops{list-style:none;margin:0;padding:0}
+.stops li{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:9px 0;border-bottom:1px solid var(--line-light);cursor:default}
+.stops li:first-child{border-top:1px solid var(--line-light)}
+.stops .sn{width:30px;height:30px;border-radius:50%;border:1px solid var(--gold-light);color:var(--gold-light);font:600 12px/28px var(--sans);text-align:center;transition:background .3s,color .3s}
+.stops li.on .sn{background:var(--gold-light);color:var(--ocean)}
+.stops small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(234,241,243,.5)}
+.stops b{display:block;font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;color:#fff;transition:color .3s}
+.stops li.on b{color:var(--gold-light)}
+.stops p{margin:1px 0 0;font-size:13.5px;color:rgba(234,241,243,.66);line-height:1.45}
+.map-key{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(234,241,243,.6)}
+.map-key i{display:inline-block;width:28px;height:0;vertical-align:middle;margin-right:10px;border-top:2.5px solid var(--gold-light)}
+.map-key .k-ferry{border-top:2.5px dotted #8FDCDC}
+.map-key .k-trip{border-top:1.5px dashed rgba(255,255,255,.75)}
+.map-key .k-ws{border-top:8px solid rgba(143,220,220,.35);border-radius:4px}
+.map-link{display:inline-block;margin-top:8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--lagoon);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px}
+@media (prefers-reduced-motion:reduce){.map-svg .route-yacht{stroke-dashoffset:0;transition:none}.map-svg .route-yacht-glow{opacity:1;transition:none}}
+@media (max-width:900px){
+  .route-grid{grid-template-columns:1fr}
+  .map-wrap{position:static}
+  .price-solo{grid-template-columns:1fr}
+  .ps-main{border-right:0;border-bottom:1px solid rgba(220,199,156,.22)}
+}
+@media (max-width:640px){
+  .map-wrap{border-radius:18px}
+  .map-svg .place{font-size:36px}
+  .map-svg .minor,.map-svg .grid-lbl,.map-svg .compass,.map-svg .yacht-lbl{display:none}
+  .map-svg .creature{font-size:29px}
+  .map-svg .atoll-lbl{font-size:18px;letter-spacing:.24em}
+  .map-svg .route-lbl{font-size:16px}
+  .map-svg .ocean-lbl{display:none}
+  .map-svg .mk-s{transform:scale(1.45)}
+  .map-svg .mk.on .mk-s{transform:scale(1.75)}
+  .map-svg .scale text{font-size:17px}
+  .ps-main{padding:40px 24px 32px}
+  .ps-main .amount{font-size:60px}
+  .ps-list{padding:22px 24px 26px}
+}
+
 /* sticky mobile CTA */
 .mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;align-items:center;justify-content:space-between;gap:12px;padding:10px 10px 10px 20px;border-radius:999px;background:rgba(11,34,51,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);color:#fff;box-shadow:0 20px 50px -20px rgba(0,0,0,.6);transform:translateY(140%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .mcta.show{transform:none}
@@ -388,13 +473,13 @@ footer p{margin:0 0 8px}
   .feats{grid-template-columns:1fr 1fr}
   .feat:nth-child(3){padding-left:0;border-left:0}
   .feat:nth-child(n+3){border-top:1px solid var(--line-light)}
-  .prices{grid-template-columns:1fr;max-width:560px;margin:0 auto}
 }
 @media (max-width:900px){
   .wrap{padding:0 22px}
   .intro-grid,.program-wrap,.practice-grid,.host-grid,.info-grid,.ocean-top,.incl{grid-template-columns:1fr}
   .intro-photos{min-height:440px}
   .parts{grid-template-columns:1fr}
+  .parts::after{content:"↓"}
   .part{min-height:440px}
   .program-aside{position:static}
   .yacht-grid{grid-auto-rows:90px}
@@ -449,7 +534,6 @@ footer p{margin:0 0 8px}
   .flight,.pack{grid-template-columns:1fr}
   .gallery{columns:2;column-gap:10px}
   .gallery button{margin-bottom:10px;border-radius:12px}
-  .price{padding:34px 24px 28px}
   .incl-box{padding:30px 22px 22px}
   .faq-list details p{padding-right:0}
   .lb-prev,.lb-next{top:auto;bottom:24px;transform:none}
@@ -464,8 +548,8 @@ footer p{margin:0 0 8px}
   <div class="wrap">
     <a class="brand" href="#top">Мальдивы <em>2027</em></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#journey">Путешествие</a></li>
       <li><a href="#yacht">Яхта</a></li>
+      <li><a href="#route">Маршрут</a></li>
       <li><a href="#program">Программа</a></li>
       <li><a href="#host">Ведущая</a></li>
       <li><a href="#price">Стоимость</a></li>
@@ -522,7 +606,7 @@ footer p{margin:0 0 8px}
       <a class="part reveal" href="#yacht">
         <img src="img/yacht-aerial.jpg" alt="Яхта сверху: палуба и бирюзовая вода" loading="lazy" width="656" height="1280" style="object-position:50% 40%">
         <div class="part-body">
-          <span class="part-num">Часть I</span>
+          <span class="part-num">Сначала · дни 1 — 5</span>
           <h3>Морское сафари</h3>
           <span class="dates">25 — 29 марта · 4 ночи</span>
           <p>Яхта идёт по атоллам Южный Мале и Ваафу: лагуна дельфинов, затонувший корабль, акулы-няньки, скаты манта и ночь с китовыми акулами.</p>
@@ -531,14 +615,14 @@ footer p{margin:0 0 8px}
       <a class="part reveal" href="#program-island">
         <img src="img/lagoon-palms.jpg" alt="Белый песок и бирюзовая лагуна острова" loading="lazy" width="736" height="919">
         <div class="part-body">
-          <span class="part-num">Часть II</span>
+          <span class="part-num">Затем · дни 5 — 11</span>
           <h3>Остров Дигура</h3>
           <span class="dates">29 марта — 4 апреля · 6 ночей</span>
           <p>Тихий остров в атолле Южный Ари: белоснежные пляжи и песчаная коса, йога в тени пальм, соседние острова, день на резорте и снова — китовые акулы.</p>
         </div>
       </a>
     </div>
-    <p class="parts-note reveal">Можно поехать <b>на всё путешествие</b> или присоединиться к одной из частей — только к морскому сафари или только к острову.</p>
+    <p class="parts-note reveal"><b>Одно цельное путешествие:</b> группа вместе проходит весь маршрут — от первой ночи на яхте до прощального заката на острове.</p>
   </div>
 </section>
 
@@ -546,7 +630,7 @@ footer p{margin:0 0 8px}
 <section class="sec dark yacht" id="yacht">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Часть I · 25 — 29 марта</span>
+      <span class="eyebrow">Яхта · 25 — 29 марта</span>
       <h2>Яхта — ваш дом <em>на четыре ночи</em></h2>
       <p class="lead">Новый 55-метровый корабль-отель, спущенный на воду в декабре 2025 года. Каюты на двоих со всеми удобствами, просторная палуба для йоги, джакузи на носу и шезлонги на верхней палубе. Каждый день — новая стоянка: рифы, песчаные косы, необитаемые острова.</p>
     </div>
@@ -597,25 +681,131 @@ footer p{margin:0 0 8px}
   </div>
 </section>
 
+<!-- ============ ROUTE MAP ============ -->
+<section class="sec dark route" id="route">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Маршрут</span>
+      <h2>Одно путешествие — <em>три атолла</em></h2>
+      <p class="lead">Сначала яхта идёт по атоллам Южный Мале и Ваафу и возвращается к столице. Затем скоростной паром переносит нас на остров Дигура в атолле Ари — оттуда выезжаем к соседним островам, на резорт и к китовым акулам.</p>
+    </div>
+    <div class="route-grid">
+      <figure class="map-wrap reveal">
+        <svg class="map-svg" viewBox="40 120 930 880" role="img" aria-labelledby="mapTitle mapDesc" xmlns="http://www.w3.org/2000/svg">
+<title id="mapTitle">Схема маршрута по Мальдивам</title>
+<desc id="mapDesc">Яхта выходит из Мале, идёт к острову Гурайдо в атолле Южный Мале и к атоллу Ваафу и возвращается к Мале. Затем скоростной паром везёт группу на остров Дигура в атолле Ари; оттуда выезды на острова Дангети и Омаду, на резорт и к китовым акулам. В последний день паром возвращает группу в аэропорт Мале.</desc>
+<defs>
+<radialGradient id="lagoon" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#5FC9CC" stop-opacity=".30"/><stop offset="1" stop-color="#2C9FA8" stop-opacity=".12"/></radialGradient>
+<radialGradient id="sea" cx="55%" cy="40%" r="75%"><stop offset="0" stop-color="#17435A"/><stop offset="1" stop-color="#0B2233"/></radialGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect x="40" y="120" width="930" height="880" fill="url(#sea)"/>
+<g class="grid">
+<line x1="40" y1="200.0" x2="970" y2="200.0"/><text class="grid-lbl" x="50" y="194.0">4°15′ с. ш.</text>
+<line x1="40" y1="400.0" x2="970" y2="400.0"/><text class="grid-lbl" x="50" y="394.0">4°00′ с. ш.</text>
+<line x1="40" y1="600.0" x2="970" y2="600.0"/><text class="grid-lbl" x="50" y="594.0">3°45′ с. ш.</text>
+<line x1="40" y1="800.0" x2="970" y2="800.0"/><text class="grid-lbl" x="50" y="794.0">3°30′ с. ш.</text>
+<line x1="120.0" y1="120" x2="120.0" y2="1000"/><text class="grid-lbl" x="126.0" y="990">72°45′ в. д.</text>
+<line x1="320.0" y1="120" x2="320.0" y2="1000"/><text class="grid-lbl" x="326.0" y="990">73°00′ в. д.</text>
+<line x1="520.0" y1="120" x2="520.0" y2="1000"/><text class="grid-lbl" x="526.0" y="990">73°15′ в. д.</text>
+<line x1="720.0" y1="120" x2="720.0" y2="1000"/><text class="grid-lbl" x="726.0" y="990">73°30′ в. д.</text>
+<line x1="920.0" y1="120" x2="920.0" y2="1000"/><text class="grid-lbl" x="926.0" y="990">73°45′ в. д.</text>
+</g>
+<text class="ocean-lbl" x="425" y="938" text-anchor="middle">Индийский океан</text>
+<path class="reef-glow" d="M606.2 -99.3C610.4 -102.9 614.4 -105.1 619.4 -107.6C624.5 -110.1 630.2 -113.1 636.4 -114.4C642.6 -115.6 649.9 -114.7 656.6 -115.0C663.3 -115.4 670.0 -115.4 676.6 -116.4C683.1 -117.4 689.7 -120.7 696.0 -120.9C702.4 -121.1 709.1 -119.7 714.7 -117.7C720.3 -115.7 724.6 -111.7 729.5 -108.7C734.4 -105.7 739.3 -103.1 744.1 -99.4C748.8 -95.8 753.6 -91.2 758.2 -86.7C762.9 -82.2 767.5 -77.3 771.8 -72.2C776.1 -67.2 780.4 -62.1 784.0 -56.5C787.6 -51.0 789.9 -44.0 793.4 -38.9C796.8 -33.7 800.6 -29.7 804.6 -25.6C808.5 -21.5 814.0 -19.0 817.0 -14.4C820.0 -9.7 821.4 -3.5 822.8 2.4C824.3 8.2 824.5 14.6 825.6 20.6C826.7 26.6 828.7 32.4 829.5 38.6C830.3 44.8 830.2 51.3 830.3 57.6C830.4 64.0 830.2 70.4 829.8 76.6C829.4 82.9 828.8 89.2 828.0 95.1C827.1 101.0 825.2 105.9 824.5 112.2C823.9 118.4 824.8 125.6 824.1 132.5C823.5 139.4 823.1 147.3 820.7 153.5C818.3 159.7 813.3 164.3 809.7 169.5C806.1 174.7 802.4 179.4 799.2 184.6C796.1 189.7 793.8 195.6 790.9 200.3C788.1 204.9 785.2 207.9 782.0 212.5C778.9 217.0 775.5 222.6 771.9 227.8C768.3 232.9 764.2 238.7 760.4 243.2C756.6 247.8 752.8 251.0 748.9 254.9C745.1 258.9 741.9 264.2 737.4 266.8C732.8 269.4 727.1 271.4 721.5 270.7C715.9 270.0 709.6 265.3 703.7 262.8C697.8 260.2 691.6 257.3 686.1 255.2C680.7 253.1 675.8 252.3 670.9 250.0C666.0 247.8 661.4 244.7 656.6 241.7C651.9 238.7 646.9 235.9 642.1 232.0C637.4 228.1 632.3 223.1 628.2 218.5C624.2 213.9 621.1 208.8 617.7 204.5C614.3 200.1 610.6 197.4 608.0 192.2C605.3 187.0 603.2 180.1 601.8 173.2C600.4 166.3 600.8 157.6 599.4 150.7C598.0 143.9 595.5 138.3 593.5 132.2C591.5 126.0 588.8 120.1 587.4 114.0C586.0 108.0 586.0 101.8 585.1 95.7C584.2 89.7 582.9 83.7 582.0 77.6C581.0 71.4 580.2 65.2 579.5 59.0C578.7 52.9 578.0 46.7 577.3 40.5C576.6 34.3 574.9 27.6 575.1 21.8C575.3 16.1 577.4 11.1 578.6 6.1C579.7 1.1 581.8 -2.3 582.2 -8.1C582.6 -14.0 580.9 -22.1 580.8 -29.2C580.8 -36.3 580.7 -44.1 581.7 -50.7C582.8 -57.2 584.9 -62.7 587.0 -68.6C589.0 -74.5 590.9 -80.7 594.1 -85.8C597.3 -91.0 602.0 -95.6 606.2 -99.3Z"/>
+<path class="atoll" d="M606.2 -99.3C610.4 -102.9 614.4 -105.1 619.4 -107.6C624.5 -110.1 630.2 -113.1 636.4 -114.4C642.6 -115.6 649.9 -114.7 656.6 -115.0C663.3 -115.4 670.0 -115.4 676.6 -116.4C683.1 -117.4 689.7 -120.7 696.0 -120.9C702.4 -121.1 709.1 -119.7 714.7 -117.7C720.3 -115.7 724.6 -111.7 729.5 -108.7C734.4 -105.7 739.3 -103.1 744.1 -99.4C748.8 -95.8 753.6 -91.2 758.2 -86.7C762.9 -82.2 767.5 -77.3 771.8 -72.2C776.1 -67.2 780.4 -62.1 784.0 -56.5C787.6 -51.0 789.9 -44.0 793.4 -38.9C796.8 -33.7 800.6 -29.7 804.6 -25.6C808.5 -21.5 814.0 -19.0 817.0 -14.4C820.0 -9.7 821.4 -3.5 822.8 2.4C824.3 8.2 824.5 14.6 825.6 20.6C826.7 26.6 828.7 32.4 829.5 38.6C830.3 44.8 830.2 51.3 830.3 57.6C830.4 64.0 830.2 70.4 829.8 76.6C829.4 82.9 828.8 89.2 828.0 95.1C827.1 101.0 825.2 105.9 824.5 112.2C823.9 118.4 824.8 125.6 824.1 132.5C823.5 139.4 823.1 147.3 820.7 153.5C818.3 159.7 813.3 164.3 809.7 169.5C806.1 174.7 802.4 179.4 799.2 184.6C796.1 189.7 793.8 195.6 790.9 200.3C788.1 204.9 785.2 207.9 782.0 212.5C778.9 217.0 775.5 222.6 771.9 227.8C768.3 232.9 764.2 238.7 760.4 243.2C756.6 247.8 752.8 251.0 748.9 254.9C745.1 258.9 741.9 264.2 737.4 266.8C732.8 269.4 727.1 271.4 721.5 270.7C715.9 270.0 709.6 265.3 703.7 262.8C697.8 260.2 691.6 257.3 686.1 255.2C680.7 253.1 675.8 252.3 670.9 250.0C666.0 247.8 661.4 244.7 656.6 241.7C651.9 238.7 646.9 235.9 642.1 232.0C637.4 228.1 632.3 223.1 628.2 218.5C624.2 213.9 621.1 208.8 617.7 204.5C614.3 200.1 610.6 197.4 608.0 192.2C605.3 187.0 603.2 180.1 601.8 173.2C600.4 166.3 600.8 157.6 599.4 150.7C598.0 143.9 595.5 138.3 593.5 132.2C591.5 126.0 588.8 120.1 587.4 114.0C586.0 108.0 586.0 101.8 585.1 95.7C584.2 89.7 582.9 83.7 582.0 77.6C581.0 71.4 580.2 65.2 579.5 59.0C578.7 52.9 578.0 46.7 577.3 40.5C576.6 34.3 574.9 27.6 575.1 21.8C575.3 16.1 577.4 11.1 578.6 6.1C579.7 1.1 581.8 -2.3 582.2 -8.1C582.6 -14.0 580.9 -22.1 580.8 -29.2C580.8 -36.3 580.7 -44.1 581.7 -50.7C582.8 -57.2 584.9 -62.7 587.0 -68.6C589.0 -74.5 590.9 -80.7 594.1 -85.8C597.3 -91.0 602.0 -95.6 606.2 -99.3Z"/>
+<path class="reef-glow" d="M567.1 319.3C571.5 316.0 576.6 314.6 582.2 312.8C587.9 310.9 595.1 310.6 600.8 308.2C606.6 305.7 611.0 300.6 616.6 298.3C622.2 296.0 628.7 295.2 634.7 294.2C640.6 293.3 646.3 293.0 652.4 292.6C658.5 292.2 665.0 291.7 671.3 291.9C677.6 292.1 684.0 292.6 690.2 293.7C696.3 294.9 702.4 296.6 708.2 298.6C713.9 300.6 720.6 301.3 724.7 305.6C728.8 309.9 729.7 318.7 732.9 324.6C736.0 330.6 740.8 335.6 743.5 341.5C746.2 347.4 747.5 354.2 749.1 360.0C750.8 365.8 751.8 370.5 753.4 376.3C754.9 382.1 758.5 388.6 758.2 394.7C757.9 400.8 753.6 406.8 751.8 412.7C750.0 418.7 749.0 424.7 747.5 430.4C745.9 436.1 744.6 441.3 742.5 446.9C740.3 452.6 737.8 458.6 734.6 464.2C731.4 469.8 727.5 475.8 723.2 480.5C718.8 485.2 713.8 490.2 708.3 492.2C702.9 494.2 696.3 492.1 690.6 492.8C684.9 493.5 679.9 496.8 674.0 496.4C668.1 496.0 661.4 492.7 655.3 490.5C649.3 488.3 642.9 486.0 637.5 483.2C632.2 480.3 627.2 477.9 623.1 473.5C618.9 469.1 616.8 461.2 612.6 456.7C608.5 452.1 602.6 450.1 598.0 446.2C593.4 442.4 589.2 437.9 585.0 433.6C580.7 429.3 576.6 425.6 572.6 420.6C568.6 415.5 564.1 409.2 561.0 403.5C558.0 397.7 555.9 391.7 554.3 386.0C552.7 380.4 552.9 375.7 551.6 369.7C550.4 363.6 546.1 355.6 546.8 349.5C547.5 343.3 552.3 337.7 555.7 332.7C559.1 327.7 562.7 322.6 567.1 319.3Z"/>
+<path class="atoll" d="M567.1 319.3C571.5 316.0 576.6 314.6 582.2 312.8C587.9 310.9 595.1 310.6 600.8 308.2C606.6 305.7 611.0 300.6 616.6 298.3C622.2 296.0 628.7 295.2 634.7 294.2C640.6 293.3 646.3 293.0 652.4 292.6C658.5 292.2 665.0 291.7 671.3 291.9C677.6 292.1 684.0 292.6 690.2 293.7C696.3 294.9 702.4 296.6 708.2 298.6C713.9 300.6 720.6 301.3 724.7 305.6C728.8 309.9 729.7 318.7 732.9 324.6C736.0 330.6 740.8 335.6 743.5 341.5C746.2 347.4 747.5 354.2 749.1 360.0C750.8 365.8 751.8 370.5 753.4 376.3C754.9 382.1 758.5 388.6 758.2 394.7C757.9 400.8 753.6 406.8 751.8 412.7C750.0 418.7 749.0 424.7 747.5 430.4C745.9 436.1 744.6 441.3 742.5 446.9C740.3 452.6 737.8 458.6 734.6 464.2C731.4 469.8 727.5 475.8 723.2 480.5C718.8 485.2 713.8 490.2 708.3 492.2C702.9 494.2 696.3 492.1 690.6 492.8C684.9 493.5 679.9 496.8 674.0 496.4C668.1 496.0 661.4 492.7 655.3 490.5C649.3 488.3 642.9 486.0 637.5 483.2C632.2 480.3 627.2 477.9 623.1 473.5C618.9 469.1 616.8 461.2 612.6 456.7C608.5 452.1 602.6 450.1 598.0 446.2C593.4 442.4 589.2 437.9 585.0 433.6C580.7 429.3 576.6 425.6 572.6 420.6C568.6 415.5 564.1 409.2 561.0 403.5C558.0 397.7 555.9 391.7 554.3 386.0C552.7 380.4 552.9 375.7 551.6 369.7C550.4 363.6 546.1 355.6 546.8 349.5C547.5 343.3 552.3 337.7 555.7 332.7C559.1 327.7 562.7 322.6 567.1 319.3Z"/>
+<path class="reef-glow" d="M639.7 683.3C643.2 682.7 649.5 682.8 655.0 682.4C660.4 682.0 666.3 680.5 672.5 680.9C678.8 681.2 686.0 682.3 692.6 684.5C699.1 686.6 706.1 689.7 711.8 693.7C717.5 697.8 721.6 704.6 726.6 708.6C731.5 712.6 737.2 713.5 741.6 717.6C745.9 721.8 749.1 728.6 752.8 733.6C756.5 738.6 760.0 743.2 763.7 747.7C767.5 752.2 772.0 755.9 775.3 760.6C778.5 765.3 781.3 770.4 783.2 775.8C785.2 781.3 785.6 787.6 787.0 793.3C788.4 799.1 789.6 804.4 791.7 810.1C793.9 815.8 798.7 821.7 799.9 827.5C801.0 833.4 798.3 839.0 798.6 845.1C798.8 851.3 801.3 857.7 801.2 864.3C801.1 870.8 800.0 878.1 798.1 884.5C796.2 891.0 793.2 897.3 790.1 902.8C786.9 908.3 782.3 912.2 779.3 917.3C776.4 922.5 775.4 928.6 772.2 933.6C768.9 938.5 765.0 943.4 760.0 946.9C755.1 950.4 748.2 951.7 742.4 954.6C736.6 957.5 731.1 962.7 725.2 964.3C719.2 965.9 712.5 964.7 706.8 964.3C701.0 963.8 695.9 962.8 690.4 961.7C685.0 960.5 679.6 958.4 673.9 957.5C668.2 956.6 661.5 958.5 656.1 956.3C650.6 954.2 645.7 948.5 641.0 944.7C636.4 940.8 632.0 937.2 628.2 933.3C624.4 929.3 620.6 926.2 618.0 921.0C615.4 915.7 614.5 908.0 612.5 901.7C610.6 895.4 608.6 889.4 606.4 883.3C604.2 877.3 601.6 871.5 599.5 865.5C597.3 859.5 593.9 853.6 593.7 847.4C593.5 841.1 597.5 834.4 598.2 828.0C598.9 821.7 597.2 815.2 598.1 809.1C598.9 803.0 601.7 797.0 603.6 791.4C605.4 785.8 607.9 781.0 609.1 775.5C610.3 770.0 610.3 764.9 610.8 758.5C611.3 752.0 611.1 743.9 612.2 737.0C613.4 730.2 615.5 723.3 617.8 717.5C620.1 711.8 623.3 707.6 626.0 702.3C628.7 697.1 631.7 689.2 633.9 686.0C636.2 682.8 636.2 683.9 639.7 683.3Z"/>
+<path class="atoll" d="M639.7 683.3C643.2 682.7 649.5 682.8 655.0 682.4C660.4 682.0 666.3 680.5 672.5 680.9C678.8 681.2 686.0 682.3 692.6 684.5C699.1 686.6 706.1 689.7 711.8 693.7C717.5 697.8 721.6 704.6 726.6 708.6C731.5 712.6 737.2 713.5 741.6 717.6C745.9 721.8 749.1 728.6 752.8 733.6C756.5 738.6 760.0 743.2 763.7 747.7C767.5 752.2 772.0 755.9 775.3 760.6C778.5 765.3 781.3 770.4 783.2 775.8C785.2 781.3 785.6 787.6 787.0 793.3C788.4 799.1 789.6 804.4 791.7 810.1C793.9 815.8 798.7 821.7 799.9 827.5C801.0 833.4 798.3 839.0 798.6 845.1C798.8 851.3 801.3 857.7 801.2 864.3C801.1 870.8 800.0 878.1 798.1 884.5C796.2 891.0 793.2 897.3 790.1 902.8C786.9 908.3 782.3 912.2 779.3 917.3C776.4 922.5 775.4 928.6 772.2 933.6C768.9 938.5 765.0 943.4 760.0 946.9C755.1 950.4 748.2 951.7 742.4 954.6C736.6 957.5 731.1 962.7 725.2 964.3C719.2 965.9 712.5 964.7 706.8 964.3C701.0 963.8 695.9 962.8 690.4 961.7C685.0 960.5 679.6 958.4 673.9 957.5C668.2 956.6 661.5 958.5 656.1 956.3C650.6 954.2 645.7 948.5 641.0 944.7C636.4 940.8 632.0 937.2 628.2 933.3C624.4 929.3 620.6 926.2 618.0 921.0C615.4 915.7 614.5 908.0 612.5 901.7C610.6 895.4 608.6 889.4 606.4 883.3C604.2 877.3 601.6 871.5 599.5 865.5C597.3 859.5 593.9 853.6 593.7 847.4C593.5 841.1 597.5 834.4 598.2 828.0C598.9 821.7 597.2 815.2 598.1 809.1C598.9 803.0 601.7 797.0 603.6 791.4C605.4 785.8 607.9 781.0 609.1 775.5C610.3 770.0 610.3 764.9 610.8 758.5C611.3 752.0 611.1 743.9 612.2 737.0C613.4 730.2 615.5 723.3 617.8 717.5C620.1 711.8 623.3 707.6 626.0 702.3C628.7 697.1 631.7 689.2 633.9 686.0C636.2 682.8 636.2 683.9 639.7 683.3Z"/>
+<path class="reef-glow" d="M159.9 206.7C164.8 203.8 169.9 202.4 175.6 201.5C181.3 200.6 187.9 200.7 194.2 201.2C200.5 201.7 207.3 202.6 213.6 204.4C219.9 206.2 226.5 208.9 231.9 212.1C237.4 215.3 241.9 219.6 246.3 223.6C250.7 227.6 254.4 231.9 258.5 236.0C262.5 240.2 266.6 244.0 270.4 248.6C274.2 253.3 278.1 258.1 281.2 264.0C284.4 270.0 287.1 277.3 289.4 284.3C291.7 291.3 293.3 299.7 295.1 306.0C296.8 312.3 298.1 317.1 299.7 322.1C301.3 327.0 303.4 330.9 305.0 335.8C306.5 340.7 308.0 345.6 308.9 351.3C309.8 357.1 310.1 363.8 310.4 370.4C310.7 376.9 310.5 383.9 310.5 390.7C310.5 397.4 310.6 404.2 310.5 410.7C310.4 417.2 310.2 423.4 309.7 429.7C309.3 436.0 308.4 442.3 308.0 448.3C307.7 454.3 307.4 460.1 307.6 465.8C307.7 471.5 308.7 476.9 309.0 482.6C309.2 488.3 309.5 494.3 309.1 500.2C308.6 506.0 307.0 512.1 306.2 517.9C305.5 523.7 304.2 529.1 304.4 534.9C304.6 540.7 306.1 546.5 307.4 552.9C308.6 559.3 311.1 566.5 312.0 573.3C313.0 580.1 313.5 587.3 313.3 593.8C313.1 600.3 311.7 606.3 310.8 612.4C309.9 618.4 308.7 624.2 307.8 630.1C306.9 636.0 306.3 642.1 305.4 647.9C304.6 653.7 303.7 659.0 302.7 664.7C301.7 670.4 300.5 675.9 299.5 682.2C298.5 688.6 297.7 696.0 296.8 702.9C295.9 709.8 295.3 717.3 294.1 723.7C293.0 730.2 291.6 736.2 289.9 741.5C288.2 746.8 286.0 750.9 284.0 755.6C282.0 760.4 280.2 764.3 277.8 770.0C275.5 775.8 272.9 783.5 269.7 790.0C266.5 796.5 262.9 803.8 258.9 809.0C254.9 814.1 250.2 818.1 245.7 821.0C241.1 824.0 236.5 825.2 231.6 826.8C226.7 828.5 221.9 829.7 216.3 830.9C210.7 832.1 204.2 833.6 198.0 833.9C191.9 834.2 185.4 833.9 179.5 832.9C173.6 831.9 167.6 829.7 162.5 827.6C157.4 825.6 153.4 823.5 149.0 820.7C144.6 817.9 140.3 815.1 136.3 810.9C132.3 806.6 128.5 801.3 125.1 795.3C121.7 789.3 118.4 780.7 115.8 775.0C113.2 769.3 111.6 765.1 109.6 760.9C107.6 756.7 105.4 754.0 103.5 749.7C101.7 745.5 99.7 741.0 98.4 735.3C97.1 729.5 96.4 722.2 95.7 715.2C95.0 708.2 95.0 700.0 94.4 693.0C93.8 686.0 93.1 679.3 92.2 673.0C91.3 666.7 89.8 660.6 88.8 655.0C87.7 649.5 86.7 644.9 85.7 639.7C84.7 634.4 83.8 628.8 82.7 623.4C81.6 617.9 80.2 612.5 79.0 606.8C77.9 601.1 76.6 595.2 76.0 589.0C75.4 582.7 75.5 575.9 75.6 569.3C75.6 562.8 76.4 556.1 76.2 549.6C76.1 543.2 75.4 537.0 74.7 530.6C74.0 524.3 72.3 517.8 72.1 511.4C71.9 505.0 72.3 498.3 73.5 492.2C74.7 486.1 77.6 480.3 79.4 474.6C81.2 469.0 83.5 463.9 84.6 458.2C85.7 452.5 85.8 446.5 85.9 440.4C86.1 434.3 85.6 427.6 85.7 421.4C85.8 415.2 86.0 409.1 86.4 403.2C86.7 397.3 87.3 391.7 87.7 386.1C88.2 380.4 88.3 375.6 89.0 369.5C89.7 363.3 90.7 355.4 91.8 349.1C93.0 342.7 94.5 337.2 95.9 331.4C97.2 325.6 98.7 320.3 99.9 314.3C101.2 308.4 102.1 301.7 103.3 295.6C104.5 289.6 105.6 283.0 107.3 277.8C109.0 272.5 110.9 268.9 113.7 264.2C116.5 259.5 120.5 254.5 124.0 249.6C127.5 244.7 131.0 240.0 134.7 234.9C138.3 229.8 141.9 223.7 146.1 219.0C150.3 214.3 154.9 209.6 159.9 206.7Z"/>
+<path class="atoll" d="M159.9 206.7C164.8 203.8 169.9 202.4 175.6 201.5C181.3 200.6 187.9 200.7 194.2 201.2C200.5 201.7 207.3 202.6 213.6 204.4C219.9 206.2 226.5 208.9 231.9 212.1C237.4 215.3 241.9 219.6 246.3 223.6C250.7 227.6 254.4 231.9 258.5 236.0C262.5 240.2 266.6 244.0 270.4 248.6C274.2 253.3 278.1 258.1 281.2 264.0C284.4 270.0 287.1 277.3 289.4 284.3C291.7 291.3 293.3 299.7 295.1 306.0C296.8 312.3 298.1 317.1 299.7 322.1C301.3 327.0 303.4 330.9 305.0 335.8C306.5 340.7 308.0 345.6 308.9 351.3C309.8 357.1 310.1 363.8 310.4 370.4C310.7 376.9 310.5 383.9 310.5 390.7C310.5 397.4 310.6 404.2 310.5 410.7C310.4 417.2 310.2 423.4 309.7 429.7C309.3 436.0 308.4 442.3 308.0 448.3C307.7 454.3 307.4 460.1 307.6 465.8C307.7 471.5 308.7 476.9 309.0 482.6C309.2 488.3 309.5 494.3 309.1 500.2C308.6 506.0 307.0 512.1 306.2 517.9C305.5 523.7 304.2 529.1 304.4 534.9C304.6 540.7 306.1 546.5 307.4 552.9C308.6 559.3 311.1 566.5 312.0 573.3C313.0 580.1 313.5 587.3 313.3 593.8C313.1 600.3 311.7 606.3 310.8 612.4C309.9 618.4 308.7 624.2 307.8 630.1C306.9 636.0 306.3 642.1 305.4 647.9C304.6 653.7 303.7 659.0 302.7 664.7C301.7 670.4 300.5 675.9 299.5 682.2C298.5 688.6 297.7 696.0 296.8 702.9C295.9 709.8 295.3 717.3 294.1 723.7C293.0 730.2 291.6 736.2 289.9 741.5C288.2 746.8 286.0 750.9 284.0 755.6C282.0 760.4 280.2 764.3 277.8 770.0C275.5 775.8 272.9 783.5 269.7 790.0C266.5 796.5 262.9 803.8 258.9 809.0C254.9 814.1 250.2 818.1 245.7 821.0C241.1 824.0 236.5 825.2 231.6 826.8C226.7 828.5 221.9 829.7 216.3 830.9C210.7 832.1 204.2 833.6 198.0 833.9C191.9 834.2 185.4 833.9 179.5 832.9C173.6 831.9 167.6 829.7 162.5 827.6C157.4 825.6 153.4 823.5 149.0 820.7C144.6 817.9 140.3 815.1 136.3 810.9C132.3 806.6 128.5 801.3 125.1 795.3C121.7 789.3 118.4 780.7 115.8 775.0C113.2 769.3 111.6 765.1 109.6 760.9C107.6 756.7 105.4 754.0 103.5 749.7C101.7 745.5 99.7 741.0 98.4 735.3C97.1 729.5 96.4 722.2 95.7 715.2C95.0 708.2 95.0 700.0 94.4 693.0C93.8 686.0 93.1 679.3 92.2 673.0C91.3 666.7 89.8 660.6 88.8 655.0C87.7 649.5 86.7 644.9 85.7 639.7C84.7 634.4 83.8 628.8 82.7 623.4C81.6 617.9 80.2 612.5 79.0 606.8C77.9 601.1 76.6 595.2 76.0 589.0C75.4 582.7 75.5 575.9 75.6 569.3C75.6 562.8 76.4 556.1 76.2 549.6C76.1 543.2 75.4 537.0 74.7 530.6C74.0 524.3 72.3 517.8 72.1 511.4C71.9 505.0 72.3 498.3 73.5 492.2C74.7 486.1 77.6 480.3 79.4 474.6C81.2 469.0 83.5 463.9 84.6 458.2C85.7 452.5 85.8 446.5 85.9 440.4C86.1 434.3 85.6 427.6 85.7 421.4C85.8 415.2 86.0 409.1 86.4 403.2C86.7 397.3 87.3 391.7 87.7 386.1C88.2 380.4 88.3 375.6 89.0 369.5C89.7 363.3 90.7 355.4 91.8 349.1C93.0 342.7 94.5 337.2 95.9 331.4C97.2 325.6 98.7 320.3 99.9 314.3C101.2 308.4 102.1 301.7 103.3 295.6C104.5 289.6 105.6 283.0 107.3 277.8C109.0 272.5 110.9 268.9 113.7 264.2C116.5 259.5 120.5 254.5 124.0 249.6C127.5 244.7 131.0 240.0 134.7 234.9C138.3 229.8 141.9 223.7 146.1 219.0C150.3 214.3 154.9 209.6 159.9 206.7Z"/>
+<ellipse class="reef-glow" cx="312.0" cy="188.0" rx="28.0" ry="22.4"/><ellipse class="atoll" cx="312.0" cy="188.0" rx="28.0" ry="22.4"/>
+<ellipse class="reef-glow" cx="652.8" cy="653.6" rx="17.6" ry="12.8"/><ellipse class="atoll" cx="652.8" cy="653.6" rx="17.6" ry="12.8"/>
+<g class="islets"><ellipse cx="606.2" cy="-99.3" rx="1.8" ry="1.5" transform="rotate(-39 606.2 -99.3)"/><ellipse cx="615.3" cy="-105.5" rx="2.9" ry="1.2" transform="rotate(-28 615.3 -105.5)"/><ellipse cx="625.4" cy="-110.5" rx="2.8" ry="0.9" transform="rotate(-24 625.4 -110.5)"/><ellipse cx="647.5" cy="-115.0" rx="1.7" ry="1.3" transform="rotate(1 647.5 -115.0)"/><ellipse cx="670.0" cy="-115.7" rx="2.0" ry="1.5" transform="rotate(-5 670.0 -115.7)"/><ellipse cx="702.4" cy="-120.6" rx="4.1" ry="0.9" transform="rotate(8 702.4 -120.6)"/><ellipse cx="722.4" cy="-113.6" rx="1.8" ry="1.0" transform="rotate(35 722.4 -113.6)"/><ellipse cx="731.4" cy="-107.6" rx="3.7" ry="1.1" transform="rotate(31 731.4 -107.6)"/><ellipse cx="756.7" cy="-88.2" rx="2.9" ry="1.0" transform="rotate(44 756.7 -88.2)"/><ellipse cx="764.4" cy="-80.5" rx="2.0" ry="1.5" transform="rotate(47 764.4 -80.5)"/><ellipse cx="778.9" cy="-63.7" rx="3.0" ry="1.3" transform="rotate(52 778.9 -63.7)"/><ellipse cx="785.2" cy="-54.6" rx="3.6" ry="1.5" transform="rotate(61 785.2 -54.6)"/><ellipse cx="790.2" cy="-44.5" rx="3.0" ry="1.4" transform="rotate(63 790.2 -44.5)"/><ellipse cx="811.1" cy="-20.2" rx="4.1" ry="1.0" transform="rotate(38 811.1 -20.2)"/><ellipse cx="818.1" cy="-12.6" rx="3.5" ry="1.0" transform="rotate(64 818.1 -12.6)"/><ellipse cx="824.0" cy="9.1" rx="3.3" ry="1.6" transform="rotate(83 824.0 9.1)"/><ellipse cx="829.9" cy="42.8" rx="3.3" ry="1.4" transform="rotate(86 829.9 42.8)"/><ellipse cx="824.3" cy="118.7" rx="3.4" ry="1.5" transform="rotate(89 824.3 118.7)"/><ellipse cx="821.4" cy="151.6" rx="2.5" ry="1.5" transform="rotate(109 821.4 151.6)"/><ellipse cx="816.3" cy="161.0" rx="2.7" ry="1.1" transform="rotate(128 816.3 161.0)"/><ellipse cx="809.7" cy="169.5" rx="1.6" ry="1.6" transform="rotate(125 809.7 169.5)"/><ellipse cx="803.0" cy="178.9" rx="2.1" ry="1.3" transform="rotate(125 803.0 178.9)"/><ellipse cx="792.0" cy="198.5" rx="2.7" ry="1.4" transform="rotate(120 792.0 198.5)"/><ellipse cx="766.9" cy="234.8" rx="2.6" ry="1.2" transform="rotate(126 766.9 234.8)"/><ellipse cx="744.2" cy="260.4" rx="1.9" ry="1.1" transform="rotate(131 744.2 260.4)"/><ellipse cx="735.4" cy="267.9" rx="2.8" ry="1.4" transform="rotate(156 735.4 267.9)"/><ellipse cx="723.9" cy="270.8" rx="1.4" ry="1.3" transform="rotate(-177 723.9 270.8)"/><ellipse cx="713.7" cy="268.0" rx="3.0" ry="1.8" transform="rotate(-152 713.7 268.0)"/><ellipse cx="662.7" cy="245.6" rx="3.9" ry="1.6" transform="rotate(-148 662.7 245.6)"/><ellipse cx="635.7" cy="226.3" rx="2.5" ry="1.0" transform="rotate(-136 635.7 226.3)"/><ellipse cx="621.5" cy="209.6" rx="1.6" ry="1.1" transform="rotate(-125 621.5 209.6)"/><ellipse cx="614.8" cy="201.0" rx="2.4" ry="0.9" transform="rotate(-133 614.8 201.0)"/><ellipse cx="608.0" cy="192.2" rx="1.8" ry="1.0" transform="rotate(-116 608.0 192.2)"/><ellipse cx="604.1" cy="182.2" rx="1.5" ry="1.7" transform="rotate(-106 604.1 182.2)"/><ellipse cx="600.5" cy="159.6" rx="2.1" ry="1.2" transform="rotate(-94 600.5 159.6)"/><ellipse cx="598.9" cy="148.5" rx="1.7" ry="1.7" transform="rotate(-105 598.9 148.5)"/><ellipse cx="586.3" cy="107.2" rx="1.7" ry="1.2" transform="rotate(-96 586.3 107.2)"/><ellipse cx="585.1" cy="95.7" rx="3.7" ry="1.0" transform="rotate(-99 585.1 95.7)"/><ellipse cx="583.1" cy="84.4" rx="4.1" ry="1.4" transform="rotate(-100 583.1 84.4)"/><ellipse cx="581.3" cy="72.9" rx="2.9" ry="0.9" transform="rotate(-98 581.3 72.9)"/><ellipse cx="576.2" cy="14.8" rx="2.4" ry="1.1" transform="rotate(-75 576.2 14.8)"/><ellipse cx="580.9" cy="-27.1" rx="2.0" ry="1.6" transform="rotate(-92 580.9 -27.1)"/><ellipse cx="598.2" cy="-91.4" rx="2.8" ry="1.2" transform="rotate(-48 598.2 -91.4)"/><ellipse cx="567.1" cy="319.3" rx="1.5" ry="1.2" transform="rotate(-34 567.1 319.3)"/><ellipse cx="577.5" cy="314.3" rx="3.3" ry="1.8" transform="rotate(-18 577.5 314.3)"/><ellipse cx="630.1" cy="294.9" rx="2.0" ry="1.1" transform="rotate(-9 630.1 294.9)"/><ellipse cx="641.3" cy="293.4" rx="2.0" ry="1.5" transform="rotate(-5 641.3 293.4)"/><ellipse cx="706.0" cy="297.9" rx="3.2" ry="1.7" transform="rotate(19 706.0 297.9)"/><ellipse cx="735.2" cy="328.5" rx="3.6" ry="1.2" transform="rotate(56 735.2 328.5)"/><ellipse cx="748.6" cy="358.0" rx="2.5" ry="1.8" transform="rotate(75 748.6 358.0)"/><ellipse cx="753.9" cy="378.3" rx="1.8" ry="1.0" transform="rotate(71 753.9 378.3)"/><ellipse cx="753.3" cy="408.7" rx="3.7" ry="1.8" transform="rotate(112 753.3 408.7)"/><ellipse cx="747.5" cy="430.4" rx="2.9" ry="1.0" transform="rotate(105 747.5 430.4)"/><ellipse cx="744.6" cy="440.7" rx="4.1" ry="1.5" transform="rotate(108 744.6 440.7)"/><ellipse cx="708.3" cy="492.2" rx="2.1" ry="1.2" transform="rotate(164 708.3 492.2)"/><ellipse cx="697.3" cy="492.8" rx="3.0" ry="1.1" transform="rotate(-176 697.3 492.8)"/><ellipse cx="686.4" cy="493.7" rx="1.8" ry="1.7" transform="rotate(163 686.4 493.7)"/><ellipse cx="676.2" cy="496.4" rx="2.7" ry="1.4" transform="rotate(179 676.2 496.4)"/><ellipse cx="614.0" cy="458.3" rx="2.6" ry="1.1" transform="rotate(-129 614.0 458.3)"/><ellipse cx="605.5" cy="451.2" rx="3.6" ry="1.1" transform="rotate(-149 605.5 451.2)"/><ellipse cx="572.6" cy="420.6" rx="2.9" ry="1.4" transform="rotate(-128 572.6 420.6)"/><ellipse cx="559.9" cy="401.3" rx="3.0" ry="1.1" transform="rotate(-115 559.9 401.3)"/><ellipse cx="555.6" cy="390.3" rx="3.6" ry="1.4" transform="rotate(-107 555.6 390.3)"/><ellipse cx="730.4" cy="711.1" rx="3.0" ry="1.7" transform="rotate(27 730.4 711.1)"/><ellipse cx="746.8" cy="724.4" rx="1.7" ry="1.3" transform="rotate(58 746.8 724.4)"/><ellipse cx="752.8" cy="733.6" rx="2.1" ry="1.0" transform="rotate(53 752.8 733.6)"/><ellipse cx="779.8" cy="767.9" rx="3.4" ry="1.5" transform="rotate(63 779.8 767.9)"/><ellipse cx="783.9" cy="777.9" rx="3.9" ry="1.8" transform="rotate(76 783.9 777.9)"/><ellipse cx="786.1" cy="789.0" rx="4.1" ry="1.3" transform="rotate(79 786.1 789.0)"/><ellipse cx="800.1" cy="829.7" rx="2.6" ry="1.4" transform="rotate(90 800.1 829.7)"/><ellipse cx="798.8" cy="840.6" rx="1.9" ry="1.2" transform="rotate(96 798.8 840.6)"/><ellipse cx="801.2" cy="862.1" rx="3.0" ry="1.3" transform="rotate(88 801.2 862.1)"/><ellipse cx="800.5" cy="873.3" rx="2.3" ry="1.5" transform="rotate(99 800.5 873.3)"/><ellipse cx="794.1" cy="895.1" rx="4.2" ry="1.6" transform="rotate(116 794.1 895.1)"/><ellipse cx="781.8" cy="913.7" rx="2.1" ry="0.9" transform="rotate(126 781.8 913.7)"/><ellipse cx="772.2" cy="933.6" rx="1.8" ry="1.3" transform="rotate(124 772.2 933.6)"/><ellipse cx="746.4" cy="952.9" rx="1.8" ry="1.7" transform="rotate(158 746.4 952.9)"/><ellipse cx="715.9" cy="965.0" rx="1.6" ry="1.5" transform="rotate(-176 715.9 965.0)"/><ellipse cx="692.8" cy="962.1" rx="4.0" ry="1.5" transform="rotate(-168 692.8 962.1)"/><ellipse cx="671.7" cy="957.3" rx="3.8" ry="1.0" transform="rotate(-179 671.7 957.3)"/><ellipse cx="642.6" cy="946.0" rx="2.9" ry="1.7" transform="rotate(-139 642.6 946.0)"/><ellipse cx="634.3" cy="939.0" rx="1.8" ry="1.4" transform="rotate(-138 634.3 939.0)"/><ellipse cx="626.6" cy="931.6" rx="1.7" ry="1.0" transform="rotate(-135 626.6 931.6)"/><ellipse cx="619.2" cy="923.1" rx="2.0" ry="1.2" transform="rotate(-119 619.2 923.1)"/><ellipse cx="615.3" cy="912.8" rx="3.5" ry="1.2" transform="rotate(-103 615.3 912.8)"/><ellipse cx="609.2" cy="891.4" rx="2.4" ry="0.9" transform="rotate(-109 609.2 891.4)"/><ellipse cx="605.7" cy="881.3" rx="1.4" ry="1.6" transform="rotate(-111 605.7 881.3)"/><ellipse cx="597.9" cy="861.5" rx="2.7" ry="1.7" transform="rotate(-113 597.9 861.5)"/><ellipse cx="594.2" cy="851.5" rx="3.7" ry="1.3" transform="rotate(-101 594.2 851.5)"/><ellipse cx="598.1" cy="819.5" rx="2.8" ry="1.5" transform="rotate(-94 598.1 819.5)"/><ellipse cx="601.3" cy="797.9" rx="3.7" ry="1.5" transform="rotate(-70 601.3 797.9)"/><ellipse cx="608.6" cy="777.5" rx="2.4" ry="0.9" transform="rotate(-76 608.6 777.5)"/><ellipse cx="610.2" cy="767.3" rx="1.6" ry="1.6" transform="rotate(-86 610.2 767.3)"/><ellipse cx="611.0" cy="756.5" rx="1.9" ry="1.0" transform="rotate(-87 611.0 756.5)"/><ellipse cx="619.7" cy="713.5" rx="2.1" ry="1.2" transform="rotate(-61 619.7 713.5)"/><ellipse cx="630.1" cy="693.4" rx="2.6" ry="1.1" transform="rotate(-65 630.1 693.4)"/><ellipse cx="180.1" cy="201.0" rx="4.1" ry="1.2" transform="rotate(-3 180.1 201.0)"/><ellipse cx="191.8" cy="201.0" rx="1.4" ry="1.2" transform="rotate(4 191.8 201.0)"/><ellipse cx="224.1" cy="208.2" rx="2.8" ry="0.9" transform="rotate(24 224.1 208.2)"/><ellipse cx="233.9" cy="213.4" rx="1.7" ry="1.3" transform="rotate(35 233.9 213.4)"/><ellipse cx="243.0" cy="220.6" rx="1.5" ry="1.2" transform="rotate(42 243.0 220.6)"/><ellipse cx="251.0" cy="228.2" rx="3.0" ry="1.4" transform="rotate(46 251.0 228.2)"/><ellipse cx="284.0" cy="269.7" rx="2.3" ry="1.8" transform="rotate(67 284.0 269.7)"/><ellipse cx="287.9" cy="280.1" rx="3.4" ry="1.5" transform="rotate(71 287.9 280.1)"/><ellipse cx="291.3" cy="290.9" rx="3.7" ry="1.7" transform="rotate(75 291.3 290.9)"/><ellipse cx="303.5" cy="331.8" rx="2.9" ry="1.4" transform="rotate(69 303.5 331.8)"/><ellipse cx="310.3" cy="419.2" rx="1.5" ry="1.0" transform="rotate(92 310.3 419.2)"/><ellipse cx="309.7" cy="429.7" rx="1.7" ry="1.7" transform="rotate(94 309.7 429.7)"/><ellipse cx="309.3" cy="495.7" rx="3.6" ry="1.6" transform="rotate(92 309.3 495.7)"/><ellipse cx="304.8" cy="539.3" rx="3.5" ry="1.1" transform="rotate(82 304.8 539.3)"/><ellipse cx="306.9" cy="550.5" rx="2.1" ry="1.6" transform="rotate(78 306.9 550.5)"/><ellipse cx="309.5" cy="561.8" rx="3.5" ry="1.8" transform="rotate(76 309.5 561.8)"/><ellipse cx="313.2" cy="584.8" rx="2.7" ry="1.5" transform="rotate(88 313.2 584.8)"/><ellipse cx="307.8" cy="630.1" rx="1.8" ry="1.1" transform="rotate(98 307.8 630.1)"/><ellipse cx="304.8" cy="652.2" rx="3.0" ry="0.9" transform="rotate(99 304.8 652.2)"/><ellipse cx="303.0" cy="662.6" rx="2.2" ry="1.5" transform="rotate(100 303.0 662.6)"/><ellipse cx="297.6" cy="695.9" rx="2.8" ry="1.3" transform="rotate(97 297.6 695.9)"/><ellipse cx="294.8" cy="719.3" rx="3.9" ry="1.1" transform="rotate(98 294.8 719.3)"/><ellipse cx="285.7" cy="751.7" rx="2.7" ry="1.6" transform="rotate(114 285.7 751.7)"/><ellipse cx="273.2" cy="781.8" rx="2.0" ry="1.8" transform="rotate(112 273.2 781.8)"/><ellipse cx="268.7" cy="791.9" rx="3.0" ry="1.0" transform="rotate(116 268.7 791.9)"/><ellipse cx="249.1" cy="818.6" rx="3.7" ry="1.4" transform="rotate(144 249.1 818.6)"/><ellipse cx="218.6" cy="830.4" rx="3.9" ry="1.3" transform="rotate(168 218.6 830.4)"/><ellipse cx="207.3" cy="832.7" rx="1.4" ry="1.3" transform="rotate(170 207.3 832.7)"/><ellipse cx="184.1" cy="833.5" rx="1.8" ry="1.2" transform="rotate(-173 184.1 833.5)"/><ellipse cx="172.9" cy="831.3" rx="3.8" ry="0.9" transform="rotate(-163 172.9 831.3)"/><ellipse cx="143.4" cy="817.0" rx="4.0" ry="1.5" transform="rotate(-143 143.4 817.0)"/><ellipse cx="128.6" cy="801.0" rx="2.4" ry="1.3" transform="rotate(-123 128.6 801.0)"/><ellipse cx="113.8" cy="770.4" rx="2.6" ry="1.1" transform="rotate(-113 113.8 770.4)"/><ellipse cx="109.6" cy="760.9" rx="1.7" ry="1.7" transform="rotate(-117 109.6 760.9)"/><ellipse cx="104.5" cy="751.8" rx="4.0" ry="1.1" transform="rotate(-115 104.5 751.8)"/><ellipse cx="100.4" cy="742.0" rx="2.8" ry="1.1" transform="rotate(-109 100.4 742.0)"/><ellipse cx="97.6" cy="731.2" rx="4.1" ry="1.7" transform="rotate(-99 97.6 731.2)"/><ellipse cx="88.3" cy="652.7" rx="3.5" ry="1.3" transform="rotate(-101 88.3 652.7)"/><ellipse cx="81.8" cy="619.3" rx="1.5" ry="1.7" transform="rotate(-103 81.8 619.3)"/><ellipse cx="79.5" cy="608.9" rx="2.7" ry="1.2" transform="rotate(-101 79.5 608.9)"/><ellipse cx="77.3" cy="598.1" rx="3.5" ry="1.8" transform="rotate(-100 77.3 598.1)"/><ellipse cx="75.8" cy="586.9" rx="3.2" ry="1.2" transform="rotate(-93 75.8 586.9)"/><ellipse cx="75.7" cy="564.9" rx="1.9" ry="1.0" transform="rotate(-87 75.7 564.9)"/><ellipse cx="76.2" cy="553.9" rx="3.9" ry="1.3" transform="rotate(-89 76.2 553.9)"/><ellipse cx="75.9" cy="543.2" rx="3.9" ry="1.8" transform="rotate(-95 75.9 543.2)"/><ellipse cx="73.4" cy="522.1" rx="1.9" ry="1.0" transform="rotate(-99 73.4 522.1)"/><ellipse cx="72.1" cy="511.4" rx="1.7" ry="1.1" transform="rotate(-91 72.1 511.4)"/><ellipse cx="72.4" cy="500.6" rx="3.0" ry="1.7" transform="rotate(-85 72.4 500.6)"/><ellipse cx="77.9" cy="478.9" rx="2.6" ry="1.4" transform="rotate(-70 77.9 478.9)"/><ellipse cx="81.6" cy="468.4" rx="2.3" ry="1.0" transform="rotate(-71 81.6 468.4)"/><ellipse cx="84.6" cy="458.2" rx="4.1" ry="1.0" transform="rotate(-80 84.6 458.2)"/><ellipse cx="85.9" cy="414.5" rx="2.2" ry="1.1" transform="rotate(-88 85.9 414.5)"/><ellipse cx="86.4" cy="403.2" rx="2.6" ry="1.8" transform="rotate(-86 86.4 403.2)"/><ellipse cx="88.8" cy="371.7" rx="1.5" ry="1.5" transform="rotate(-84 88.8 371.7)"/><ellipse cx="96.9" cy="327.1" rx="2.5" ry="1.7" transform="rotate(-76 96.9 327.1)"/><ellipse cx="105.6" cy="284.1" rx="1.7" ry="1.0" transform="rotate(-77 105.6 284.1)"/></g>
+<text class="atoll-lbl" x="700" y="168">СЕВЕРНЫЙ МАЛЕ</text>
+<text class="atoll-lbl" x="604" y="372">ЮЖНЫЙ МАЛЕ</text>
+<text class="atoll-lbl" x="622" y="842">ВААФУ</text>
+<text class="atoll-lbl" x="132" y="420">АТОЛЛ АРИ</text>
+<circle class="isl" cx="727.4" cy="259.6" r="3.2"/>
+<circle class="isl" cx="743.2" cy="246.6" r="3.2"/>
+<circle class="isl" cx="694.6" cy="480.0" r="3.2"/>
+<circle class="isl" cx="718.2" cy="725.1" r="3.2"/>
+<circle class="isl" cx="259.1" cy="778.9" r="3.2"/>
+<circle class="isl" cx="284.5" cy="714.0" r="3.2"/>
+<circle class="isl" cx="291.1" cy="567.4" r="3.2"/>
+<circle class="isl" cx="190.0" cy="820.0" r="3.2"/>
+<path class="ws-zone" d="M268.0 796.0C261.3 803.6 242.0 833.6 228.0 841.6C214.0 849.6 191.3 843.6 184.0 844.0"/>
+<path class="route-ferry" d="M727.4 259.6C699.5 283.0 614.6 339.9 560.0 400.0C505.4 460.1 450.1 556.9 400.0 620.0C349.9 683.1 282.6 752.4 259.1 778.9"/>
+<path class="route-yacht-glow" d="M743.2 246.6C747.7 255.5 765.2 276.1 770.0 300.0C774.8 323.9 777.8 364.2 772.0 390.0C766.2 415.8 747.0 438.0 735.0 455.0C723.0 472.0 708.5 474.5 700.0 492.0C691.5 509.5 685.7 535.3 684.0 560.0C682.3 584.7 685.3 614.7 690.0 640.0C694.7 665.3 702.8 690.3 712.0 712.0C721.2 733.7 731.7 766.2 745.0 770.0C758.3 773.8 782.0 756.7 792.0 735.0C802.0 713.3 804.5 675.8 805.0 640.0C805.5 604.2 798.5 560.0 795.0 520.0C791.5 480.0 788.2 435.0 784.0 400.0C779.8 365.0 777.7 333.0 770.0 310.0C762.3 287.0 743.3 270.0 738.0 262.0"/>
+<path class="route-yacht r-draw" pathLength="1" d="M743.2 246.6C747.7 255.5 765.2 276.1 770.0 300.0C774.8 323.9 777.8 364.2 772.0 390.0C766.2 415.8 747.0 438.0 735.0 455.0C723.0 472.0 708.5 474.5 700.0 492.0C691.5 509.5 685.7 535.3 684.0 560.0C682.3 584.7 685.3 614.7 690.0 640.0C694.7 665.3 702.8 690.3 712.0 712.0C721.2 733.7 731.7 766.2 745.0 770.0C758.3 773.8 782.0 756.7 792.0 735.0C802.0 713.3 804.5 675.8 805.0 640.0C805.5 604.2 798.5 560.0 795.0 520.0C791.5 480.0 788.2 435.0 784.0 400.0C779.8 365.0 777.7 333.0 770.0 310.0C762.3 287.0 743.3 270.0 738.0 262.0"/>
+<path class="route-trip" d="M259.1 778.9Q300 750 284.5 714.0"/>
+<path class="route-trip" d="M259.1 778.9Q318 660 291.1 567.4"/>
+<path class="route-trip" d="M259.1 778.9Q232 742 214 700"/>
+<text class="place" x="700" y="282" text-anchor="end">Мале</text>
+<text class="place minor" x="780" y="226" text-anchor="start">аэропорт</text>
+<text class="place" x="672" y="487" text-anchor="end">Гурайдо</text>
+<text class="place" x="700" y="742" text-anchor="end">Алимата</text>
+<text class="place" x="284" y="806" text-anchor="start">Дигура</text>
+<text class="place" x="300" y="712" text-anchor="start">Дангети</text>
+<text class="place" x="306" y="566" text-anchor="start">Омаду</text>
+<text class="place minor" x="176" y="812" text-anchor="end">Маамигили</text>
+<text class="place minor" x="200" y="694" text-anchor="end">резорт 5*</text>
+<text class="creature" x="676" y="516" text-anchor="end">дельфины</text>
+<text class="creature" x="640" y="778" text-anchor="end">акулы-няньки</text>
+<text class="creature" x="204" y="906" text-anchor="start">китовые акулы</text>
+<text class="route-lbl" x="500" y="540" text-anchor="middle" transform="rotate(-50 500 540)">скоростной паром</text>
+<text class="route-lbl yacht-lbl" x="838" y="560" text-anchor="middle" transform="rotate(84 838 560)">яхта</text>
+<g class="mk" data-stop="1" transform="translate(743.2 246.6)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">1</text></g></g>
+<g class="mk" data-stop="2" transform="translate(694.6 480.0)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">2</text></g></g>
+<g class="mk" data-stop="3" transform="translate(718.2 725.1)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">3</text></g></g>
+<g class="mk" data-stop="4" transform="translate(805.0 640.0)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">4</text></g></g>
+<g class="mk" data-stop="5" transform="translate(259.1 778.9)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">5</text></g></g>
+<g class="mk" data-stop="6" transform="translate(284.5 714.0)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">6</text></g></g>
+<g class="mk" data-stop="7" transform="translate(214.0 700.0)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">7</text></g></g>
+<g class="mk" data-stop="8" transform="translate(186.0 872.0)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">8</text></g></g>
+<g class="mk" data-stop="9" transform="translate(291.1 567.4)"><g class="mk-s"><circle r="15"/><text y="4.6" text-anchor="middle">9</text></g></g>
+<g class="compass" transform="translate(905 200)"><circle r="34"/><circle r="26" class="c2"/><path d="M0 -40 L7 0 L0 6 L-7 0Z" class="n"/><path d="M0 40 L7 0 L0 -6 L-7 0Z"/><text y="-48" text-anchor="middle">С</text></g>
+<g class="scale" transform="translate(72 950)"><line x1="0" y1="0" x2="144" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><line x1="72" y1="-3" x2="72" y2="3"/><line x1="144" y1="-5" x2="144" y2="5"/><text x="0" y="-12">0</text><text x="144" y="-12" text-anchor="middle">20 км</text></g>
+</svg>
+        <figcaption>Схема маршрута, расстояния приблизительные. Точные стоянки яхты выбирает капитан по погоде.</figcaption>
+      </figure>
+      <div class="reveal">
+        <ol class="stops">
+          <li data-stop="1"><span class="sn">1</span><div><small>День 1 · 25 марта</small><b>Мале</b><p>Встреча в аэропорту, прогулка по столице, посадка на яхту</p></div></li>
+          <li data-stop="2"><span class="sn">2</span><div><small>День 2</small><b>Гурайдо, Южный Мале</b><p>Лагуна дельфинов, необитаемый остров, песчаная коса</p></div></li>
+          <li data-stop="3"><span class="sn">3</span><div><small>День 3</small><b>Атолл Ваафу</b><p>Корабль в кораллах, акулы-няньки, скаты-хвостоколы</p></div></li>
+          <li data-stop="4"><span class="sn">4</span><div><small>День 4</small><b>Обратный путь к Мале</b><p>Скаты манта и ночь с китовыми акулами</p></div></li>
+          <li data-stop="5"><span class="sn">5</span><div><small>День 5 · 29 марта</small><b>Дигура, атолл Ари</b><p>Паром на остров, сапборды в лагуне</p></div></li>
+          <li data-stop="6"><span class="sn">6</span><div><small>День 6</small><b>Дангети</b><p>Местный паром, синие и голубые кораллы</p></div></li>
+          <li data-stop="7"><span class="sn">7</span><div><small>День 7</small><b>Резорт 5*</b><p>Amaya или Centara Grand: риф, бассейны, обед</p></div></li>
+          <li data-stop="8"><span class="sn">8</span><div><small>День 8</small><b>Китовые акулы</b><p>Внешний риф между Дигурой и Маамигили</p></div></li>
+          <li data-stop="9"><span class="sn">9</span><div><small>День 9</small><b>Омаду</b><p>Остров, почти не тронутый туризмом</p></div></li>
+          <li data-stop="1"><span class="sn">11</span><div><small>День 11 · 4 апреля</small><b>Мале</b><p>Паром в аэропорт, вылет домой</p></div></li>
+        </ol>
+        <div class="map-key">
+          <span><i class="k-yacht"></i>яхта</span>
+          <span><i class="k-ferry"></i>паром</span>
+          <span><i class="k-trip"></i>выезды с острова</span>
+          <span><i class="k-ws"></i>китовые акулы</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PROGRAM ============ -->
 <section class="sec" id="program">
   <div class="wrap program-wrap">
     <aside class="program-aside reveal">
-      <span class="eyebrow">Маршрут</span>
+      <span class="eyebrow">Программа</span>
       <h2 style="font-size:clamp(42px,5vw,68px);margin-bottom:22px">Программа <em>по дням</em></h2>
       <p class="lead" style="font-size:17px">Одиннадцать дней — от первого рассвета на палубе до прощального заката на острове. Нажмите на день, чтобы раскрыть подробности.</p>
-      <ul class="route">
-        <li><b>Мале</b>столица, аэропорт, посадка на яхту</li>
-        <li><b>Южный Мале</b>лагуна дельфинов у Гурайдо</li>
-        <li><b>Атолл Ваафу</b>затонувший корабль, акулы-няньки, манты</li>
-        <li><b>Дигура, Южный Ари</b>остров, китовые акулы</li>
-        <li><b>Дангети · Омаду · резорт</b>соседние острова</li>
-        <li><b>Мале</b>скоростной паром в аэропорт</li>
-      </ul>
+      <a class="map-link" href="#route">Смотреть маршрут на карте ↑</a>
     </aside>
 
     <div class="program-days">
-      <div class="part-label reveal"><span>Часть I</span><h3>Морское сафари</h3><small>25 — 29 марта</small></div>
+      <div class="part-label reveal"><span>На борту</span><h3>Морское сафари</h3><small>25 — 29 марта</small></div>
       <div class="days">
         <details class="day" open>
           <summary><span class="dn">01</span><span><span class="dd">Чт · 25 марта</span><span class="dt">Мале и первая ночь на яхте</span></span><span class="pm"></span></summary>
@@ -655,7 +845,7 @@ footer p{margin:0 0 8px}
         </details>
       </div>
 
-      <div class="part-label reveal" id="program-island"><span>Часть II</span><h3>Остров Дигура</h3><small>29 марта — 4 апреля</small></div>
+      <div class="part-label reveal" id="program-island"><span>На берегу</span><h3>Остров Дигура</h3><small>29 марта — 4 апреля</small></div>
       <div class="days">
         <details class="day">
           <summary><span class="dn">05</span><span><span class="dd">Пн · 29 марта</span><span class="dt">Переезд на остров Дигура</span></span><span class="pm"></span></summary>
@@ -809,37 +999,28 @@ footer p{margin:0 0 8px}
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Стоимость</span>
-      <h2>Выберите <em>свой формат</em></h2>
-      <p class="lead">Цены за человека при двухместном размещении. Точная стоимость будет объявлена в ближайшее время — напишите Татьяне, и она сообщит её первой.</p>
+      <h2>Стоимость <em>путешествия</em></h2>
+      <p class="lead">Путешествие единое: группа вместе проходит весь маршрут, от яхты до острова. Точная стоимость будет объявлена в ближайшее время — напишите Татьяне, и она сообщит её первой.</p>
     </div>
-    <div class="prices">
-      <div class="price feature reveal">
-        <span class="tag">Полный маршрут</span>
+    <div class="price-solo reveal">
+      <div class="ps-main">
+        <span class="tag">Весь маршрут</span>
         <small>11 дней · 10 ночей</small>
         <h3>Яхта и остров</h3>
-        <span class="when">25 марта — 4 апреля</span>
+        <span class="when">25 марта — 4 апреля 2027</span>
         <div class="amount">***<sup>USD</sup></div>
-        <p class="per">за человека</p>
-        <ul><li>4 ночи на яхте</li><li>6 ночей на острове Дигура</li><li>вся программа и практики</li></ul>
+        <p class="per">за человека при двухместном размещении</p>
+        <p class="per">Одноместное размещение — доплата *** USD</p>
       </div>
-      <div class="price reveal">
-        <small>5 дней · 4 ночи</small>
-        <h3>Морское сафари</h3>
-        <span class="when">25 — 29 марта</span>
-        <div class="amount">***<sup>USD</sup></div>
-        <p class="per">за человека</p>
-        <ul><li>каюта на двоих</li><li>дельфины, манты, китовые акулы</li><li>йога на палубе</li></ul>
-      </div>
-      <div class="price reveal">
-        <small>7 дней · 6 ночей</small>
-        <h3>Остров Дигура</h3>
-        <span class="when">29 марта — 4 апреля</span>
-        <div class="amount">***<sup>USD</sup></div>
-        <p class="per">за человека</p>
-        <ul><li>отель на берегу</li><li>соседние острова и резорт</li><li>йога на пляже</li></ul>
-      </div>
+      <ul class="ps-list">
+        <li><b>4 ночи на яхте</b><span>каюта на двоих со всеми удобствами</span></li>
+        <li><b>6 ночей на острове Дигура</b><span>отель на берегу, двухместный номер</span></li>
+        <li><b>Трёхразовое питание</b><span>на яхте и на острове</span></li>
+        <li><b>Йога дважды в день</b><span>пранаяма, медитации, практики у костра</span></li>
+        <li><b>Все выезды по программе</b><span>дельфины, манты, китовые акулы, острова</span></li>
+        <li><b>Паром Мале — остров и обратно</b><span>встреча и проводы в аэропорту</span></li>
+      </ul>
     </div>
-    <p class="price-note reveal">Доплата за одноместное размещение: на яхте — *** USD за 4 ночи, на острове — *** USD за ночь.</p>
 
     <div class="incl">
       <div class="incl-box yes reveal">
@@ -936,7 +1117,6 @@ footer p{margin:0 0 8px}
       <details><summary>Какая погода в конце марта?</summary><p>Это разгар сухого сезона: солнечно, около +30 °C, вода тёплая — порядка +29 °C. Море обычно спокойное, видимость под водой — одна из лучших в году.</p></details>
       <details><summary>Я никогда не занималась(ся) йогой — мне подойдёт?</summary><p>Да. Практики мягкие и адаптируются под уровень: у каждой позы есть несколько вариантов. Главное — дыхание, отдых и ощущение тела, а не сложные асаны.</p></details>
       <details><summary>Я неуверенно плаваю или ни разу не сноркелил(а)</summary><p>Всё, что есть в программе, видно с поверхности воды: нужны маска, трубка и ласты, при желании — жилет. Гиды покажут основы и будут рядом. В любой момент можно остаться на лодке и наблюдать с борта.</p></details>
-      <details><summary>Можно поехать только на часть путешествия?</summary><p>Да: только на морское сафари (25–29 марта) или только на остров Дигура (29 марта — 4 апреля). Напишите Татьяне — она подскажет, как удобнее состыковать перелёты.</p></details>
       <details><summary>Еду одна (один) — как с размещением?</summary><p>Размещение — по двое в каюте и в номере. Если вы едете одни, поможем подобрать соседа или соседку. Можно жить и одному — с доплатой за одноместное размещение.</p></details>
       <details><summary>Не будет ли укачивать на яхте?</summary><p>Яхта большая и устойчивая, ночует на защищённых якорных стоянках, а в конце марта море обычно спокойное. Если вы чувствительны к качке, возьмите привычное средство от укачивания.</p></details>
       <details><summary>Есть ли правила на местных островах?</summary><p>Мальдивы — мусульманская страна. На локальных островах, как Дигура, в посёлке принято закрывать плечи и колени, а купаться в бикини — на специальном пляже. Алкоголь на локальных островах запрещён законом; его можно заказать в баре яхты и на резорте.</p></details>
@@ -1038,7 +1218,21 @@ footer p{margin:0 0 8px}
     if(e.key==='Escape') close(); if(e.key==='ArrowLeft') show(idx-1); if(e.key==='ArrowRight') show(idx+1);
   });
 
-  // переход к части II программы — раскрыть первый день острова
+
+  // карта: подсветка остановки при наведении на список или маркер
+  var stops=[].slice.call(document.querySelectorAll('.stops li')), mks=[].slice.call(document.querySelectorAll('.map-svg .mk'));
+  function hi(id,on){
+    mks.forEach(function(m){ if(m.getAttribute('data-stop')===id) m.classList.toggle('on',on); });
+    stops.forEach(function(li){ if(li.getAttribute('data-stop')===id) li.classList.toggle('on',on); });
+  }
+  stops.concat(mks).forEach(function(el){
+    var id=el.getAttribute('data-stop');
+    el.addEventListener('mouseenter',function(){ hi(id,true); });
+    el.addEventListener('mouseleave',function(){ hi(id,false); });
+    el.addEventListener('click',function(){ var on=!el.classList.contains('on'); mks.concat(stops).forEach(function(x){x.classList.remove('on');}); hi(id,on); });
+  });
+
+  // переход к острову в программе — раскрыть первый день острова
   document.querySelectorAll('a[href="#program-island"]').forEach(function(a){
     a.addEventListener('click',function(){ var d=document.querySelector('#program-island + .days .day'); if(d) d.open=true; });
   });
