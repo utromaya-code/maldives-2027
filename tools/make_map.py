@@ -49,7 +49,7 @@ small = {"rasdhoo":(72.99,4.265,0.035,0.028), "fulidhoo":(73.416,3.683,0.022,0.0
 svg=[]
 W=['<svg class="map-svg" viewBox="40 120 930 880" role="img" aria-labelledby="mapTitle mapDesc" xmlns="http://www.w3.org/2000/svg">',
    '<title id="mapTitle">Схема маршрута по Мальдивам</title>',
-   '<desc id="mapDesc">Яхта выходит из Мале, идёт к острову Гурайдо в атолле Южный Мале и к атоллу Ваафу и возвращается к Мале. Затем скоростной паром везёт группу на остров Дигура в атолле Ари; оттуда выезды на острова Дангети и Омаду, на резорт и к китовым акулам. В последний день паром возвращает группу в аэропорт Мале.</desc>',
+   '<desc id="mapDesc">Скоростной паром везёт группу из Мале на остров Дигура в атолле Южный Ари. С острова выезжаем на Дангети и Омаду, на резорт и к китовым акулам. Затем на пароме возвращаемся в Мале и пересаживаемся на яхту. Яхта идёт к Гурайдо и в атолл Ваафу и возвращается в Мале.</desc>',
    '<defs>',
    '<radialGradient id="lagoon" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#5FC9CC" stop-opacity=".30"/><stop offset="1" stop-color="#2C9FA8" stop-opacity=".12"/></radialGradient>',
    '<radialGradient id="sea" cx="55%" cy="40%" r="75%"><stop offset="0" stop-color="#17435A"/><stop offset="1" stop-color="#0B2233"/></radialGradient>',
@@ -151,15 +151,15 @@ lbl("route-lbl yacht-lbl",838,560,"яхта","middle",' transform="rotate(84 838
 def mk(stop,x,y,t,minor=False):
     r=15 if len(t)<3 else 19
     svg.append(f'<g class="mk{" mk-sm" if minor else ""}" data-stop="{stop}" transform="translate({f(x)} {f(y)})"><g class="mk-s"><circle r="{r}"/><text y="4.6" text-anchor="middle">{t}</text></g></g>')
-mk("1",*NP["airport"],"1")
-mk("2",NP["guraidhoo"][0],NP["guraidhoo"][1],"2")
-mk("3",*NP["alimatha"],"3")
-mk("4",805,640,"4")
-mk("5",*NP["dhigurah"],"5")
-mk("6",*NP["dhangethi"],"6")
-mk("7",214,700,"7")
-mk("8",186,872,"8")
-mk("9",*NP["omadhoo"],"9")
+mk("1",*NP["dhigurah"],"1")
+mk("2",*NP["dhangethi"],"2")
+mk("3",214,700,"3")
+mk("4",186,872,"4")
+mk("5",*NP["omadhoo"],"5")
+mk("7",*NP["airport"],"7")
+mk("8",*NP["guraidhoo"],"8")
+mk("9",*NP["alimatha"],"9")
+mk("10",805,640,"10")
 
 # compass + scale
 svg.append('<g class="compass" transform="translate(905 200)"><circle r="34"/><circle r="26" class="c2"/><path d="M0 -40 L7 0 L0 6 L-7 0Z" class="n"/><path d="M0 40 L7 0 L0 -6 L-7 0Z"/><text y="-48" text-anchor="middle">С</text></g>')
